@@ -1,0 +1,9 @@
+@using TravelClient.Models;
+
+@foreach (Review review in Model)
+{
+    <ul>
+        <li>City: @review.City</li>
+    </ul>
+    <a href="/Reviews/Details/@(review.ReviewId)"><p>View Details</p></a>
+}

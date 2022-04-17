@@ -1,0 +1,22 @@
+@model TravelClient.Models.Review;
+
+<h2>Review Details</h2>
+
+
+
+@if(Model.City == null)
+{
+  <p>Sorry no details for you!</p>
+}
+else
+{
+  <h3>@Html.DisplayNameFor(model => model.City): @Html.DisplayFor(model => model.City)</h3>
+  <h4>@Html.DisplayNameFor(model => model.Description): @Html.DisplayFor(model => model.Description)</h4>
+  <h4>@Html.DisplayNameFor(model => model.Rating): @Html.DisplayFor(model => model.Rating)</h4>
+}
+
+@Html.ActionLink("Edit", "Edit", new { id = Model.ReviewId }, new { @class = "btn btn-primary"})
+@using (Html.BeginForm("Delete", "Reviews", new { id = Model.ReviewId }))
+  {
+    <input type="submit" value="Delete"class="btn btn-info btn-sm"/>
+  }
